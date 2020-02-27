@@ -160,6 +160,7 @@ class api extends \curl {
 
         $url = $this->baseurl . $resource;
 
+        $this->resetHeader();
         $header = $this->get_authentication_header($runwithroles);
         $header[] = 'Content-Type: application/json';
         $this->setHeader($header);
@@ -220,8 +221,8 @@ class api extends \curl {
 
         $url = $this->baseurl . $resource;
 
+        $this->resetHeader();
         $header = $this->get_authentication_header($runwithroles);
-
         $header[] = "Content-Type: multipart/form-data";
         $this->setHeader($header);
         $this->setopt(array('CURLOPT_HEADER' => false));
@@ -262,6 +263,7 @@ class api extends \curl {
 
         $url = $this->baseurl . $resource;
 
+        $this->resetHeader();
         $header = $this->get_authentication_header($runwithroles);
         $this->setHeader($header);
         $this->setopt(array('CURLOPT_HEADER' => false));
@@ -296,6 +298,7 @@ class api extends \curl {
 
         $url = $this->baseurl . $resource;
 
+        $this->resetHeader();
         $header = $this->get_authentication_header($runwithroles);
         $this->setHeader($header);
         $this->setopt(array('CURLOPT_HEADER' => false));
